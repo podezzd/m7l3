@@ -8,10 +8,9 @@ def test_password_characters():
     for char in password:
         assert char in valid_characters
 
-"""
-Допиши еще один тест из предложенных. Или придумай свой.
-Если сможешь написать больше, то будет круто!
+def test_password_characters_with_wrong_input():
+    """Тест, что при генерации используются только допустимые символы"""
+    valid_characters = string.ascii_letters + string.digits + string.punctuation
+    password = generate_password('j')  # Генерируем длинный пароль для более надежной проверки
+    assert password == 'Неправильный ввод длины пароля'
 
-Тест, что длина пароля соответствует заданной
-Тест, что два сгенерированных подряд пароля различаются
-"""
